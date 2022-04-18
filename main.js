@@ -31,3 +31,19 @@ function getBookListFromLocalStorage() {
 }
 
 renderBookList(getBookListFromLocalStorage());
+
+const addBookForm = document.querySelector('#add-book')
+addBookForm.addEventListener('submit', function (event) {
+  event.preventDefault()
+  const title = event.target.querySelector('#title').value
+  const author = event.target.querySelector('#author').value
+  const bookList = getBookListFromLocalStorage();
+  const id = bookList.length + 1;
+  bookList.push({
+    title,
+    author,
+    id
+  })
+  this.reset();
+  renderBookList(bookList)
+});
