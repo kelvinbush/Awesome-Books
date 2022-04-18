@@ -21,3 +21,13 @@ function renderBookList(bookList) {
             <hr>`
   }).join('')
 }
+
+function getBookListFromLocalStorage() {
+  const bookListFromLocalStorage = localStorage.getItem('bookList')
+  if (bookListFromLocalStorage) {
+    return JSON.parse(bookListFromLocalStorage)
+  }
+  return books;
+}
+
+renderBookList(getBookListFromLocalStorage());
