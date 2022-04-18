@@ -12,8 +12,10 @@ const books = [
 ];
 
 const bookListSection = document.querySelector('#book-list');
+
 function renderBookList(bookList) {
-  bookListSection.innerHTML = bookList.map((book) => `<p class="title">${book.title}</p>
+  bookListSection.innerHTML = bookList.map((book) => `
+<p class="title">${book.title}</p>
             <p>${book.author}</p>
             <button data-id=${book.id} class="remove">Remove</button>
             <hr>`).join('');
@@ -46,8 +48,8 @@ addBookForm.addEventListener('submit', function (event) {
     id,
   });
   this.reset();
-  saveBookToStorage();
   renderBookList(bookList);
+  saveBookToStorage(bookList);
 });
 
 bookListSection.addEventListener('click', (event) => {
