@@ -21,18 +21,6 @@ function renderBookList() {
         </article>`).join('');
 }
 
-function saveBookToStorage(bookList) {
-  localStorage.setItem('bookList', JSON.stringify(bookList));
-}
-
-function getBookListFromLocalStorage() {
-  const bookListFromLocalStorage = localStorage.getItem('bookList');
-  if (bookListFromLocalStorage) {
-    return new AwesomeBooks(JSON.parse(bookListFromLocalStorage));
-  }
-  return awesomeBooks;
-}
-
 renderBookList();
 
 const addBookForm = document.querySelector('#add-book');

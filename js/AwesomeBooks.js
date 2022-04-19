@@ -18,7 +18,6 @@ class AwesomeBooks {
     });
   }
 
-
   getBooks() {
     return this.books;
   }
