@@ -40,3 +40,44 @@ bookListSection.addEventListener('click', (event) => {
     renderBookList();
   }
 });
+
+const dateSection = document.querySelector('#date');
+const dateOptions = {
+  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+};
+dateSection.innerHTML = new Date().toLocaleDateString('en-US', dateOptions);
+
+const listLink = document.querySelector('#list');
+const newLink = document.querySelector('#new');
+const contactLink = document.querySelector('#contact');
+
+const listSection = document.querySelector('#list-section');
+const newSection = document.querySelector('#new-book');
+const contactSection = document.querySelector('#contact-section');
+
+listLink.addEventListener('click', () => {
+  listLink.classList.add('active');
+  newLink.classList.remove('active');
+  contactLink.classList.remove('active');
+  listSection.classList.remove('hidden');
+  newSection.classList.add('hidden');
+  contactSection.classList.add('hidden');
+});
+
+newLink.addEventListener('click', () => {
+  listLink.classList.remove('active');
+  newLink.classList.add('active');
+  contactLink.classList.remove('active');
+  listSection.classList.add('hidden');
+  newSection.classList.remove('hidden');
+  contactSection.classList.add('hidden');
+});
+
+contactLink.addEventListener('click', () => {
+  listLink.classList.remove('active');
+  newLink.classList.remove('active');
+  contactLink.classList.add('active');
+  listSection.classList.add('hidden');
+  newSection.classList.add('hidden');
+  contactSection.classList.remove('hidden');
+});
