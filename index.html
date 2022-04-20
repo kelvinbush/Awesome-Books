@@ -7,22 +7,48 @@
     <title>Awesome Books</title>
 </head>
 <body>
-<h1>All awesome books</h1>
-<section id="book-list" class="books">
+<header>
+    <h4>Awesome Books</h4>
+    <nav>
+        <ul class="nav__links">
+            <li id="list" class="active"><a href=#">List</a></li>
+            <li id="new"><a href=#">Add new</a></li>
+            <li id="contact"><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="date">
 </section>
-<hr>
-<h2>Add a new book</h2>
-<form id="add-book">
-    <input id="title" type="text" placeholder="Title">
-    <br>
-    <br>
-    <input id="author" type="text" placeholder="Author">
-    <br>
-    <br>
-    <button type="submit">Add</button>
-</form>
-
-
+<section id="list-section">
+    <h1>All awesome books</h1>
+    <div id="book-list" class="books">
+    </div>
+</section>
+<section id="contact-section" class="contact hidden">
+    <h2>Contact Information</h2>
+    <p>Do you have any questions, or you just want to say "Hello"? </p>
+    <p>You can reach out to us!</p>
+    <ul>
+        <li>Our e-mail: <a href="mailto:kelybush@gmail.com">kelybush@gmail.com</a></li>
+        <li>Our phone number: +1-123-456-7890</li>
+        <li>Our address: 123 Main Street, Anytown, CA 12345</li>
+    </ul>
+</section>
+<section id="new-book" class="hidden">
+    <h2>Add a new book</h2>
+    <form id="add-book">
+        <input id="title" type="text" placeholder="Title">
+        <br>
+        <br>
+        <input id="author" type="text" placeholder="Author">
+        <br>
+        <br>
+        <button type="submit">Add</button>
+    </form>
+</section>
+<footer>
+    <p>Copyright &copy; 2022 Awesome Books</p>
+</footer>
 <script type="module" src="js/main.js"></script>
 </body>
 </html>
